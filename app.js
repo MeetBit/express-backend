@@ -1,16 +1,16 @@
 const express = require('express')
 
-//middleware
+//middleware imports
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const compression = require('compression')
 const responseTime = require('response-time')
 
-//utils
+//utils imports
 const createError = require('http-errors')
 
-//routers
-const indexRouter = require('./routes/index')
+//routers imports
+const indexRouter = require('@routes/index')
 
 const app = express();
 
@@ -24,6 +24,5 @@ app.use(responseTime())
 
 //routers
 app.use('/', indexRouter);
-
 
 module.exports = app;
