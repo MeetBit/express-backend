@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+          "@controllers/*": ["controllers/*"],
+          "@middlewares/*": ["middlewares/*"],
+          "@public/*": ["public/*"],
+          "@routes/*": ["routes/*"],
+          "@tests/*": ["tests/*"],
+          "@utils/*": ["utils/*"]
+      }
+  },
+  "exclude": ["node_modules"]
+}
