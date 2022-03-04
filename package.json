@@ -18,5 +18,8 @@
     "response-time": "^2.3.2",
     "winston": "^3.6.0",
     "winston-cloudwatch": "^3.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
