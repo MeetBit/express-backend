@@ -177,7 +177,7 @@ The main way we are making this work is with subpath imports in `package.json` a
 ...
 ```
 
-```json
+```jsx
 //jsconfig.json
 
 {
