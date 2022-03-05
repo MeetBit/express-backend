@@ -153,7 +153,7 @@ Please note that this was only preconfigured to be used on index.js files of mod
 
 The main way we are making this work is with subpath imports in `package.json` and `jsconfig.json` for intellisense so you will need to make modifications to both files. At the same time, you will need to make adjustments to `jest: {... moduleNameMapper: { ... } }` in package.json for tests to work. You can follow the following syntax for both files.
 
-```json
+```jsx
 //package.json
 
 ...
