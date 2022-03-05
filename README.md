@@ -280,7 +280,7 @@ const thisIsAController = (req,res,next) => {
 logger.info(`message outside a controller`) // without request object
 ```
 
-Using the logger is quite simple and **can be used to completely replace `console.log`** even in development. Whenever you are in a controller or have access to the HTTP request object, you can pass it as the second parameter and the request information will be logged together with your message. This is optional and you can still log messages without it. The logger follows [winston’s logging levels](https://github.com/winstonjs/winston#logging-levels) (based on npm logging levels) aslaid out below:
+Using the logger is quite simple and **can be used to completely replace `console.log`** even in development. Whenever you are in a controller or have access to the HTTP request object, you can pass it as the second parameter and the request information will be logged together with your message. This is optional and you can still log messages without it. The logger follows [winston’s logging levels](https://github.com/winstonjs/winston#logging-levels) (based on npm logging levels) as laid out below:
 | level   | priority |
 |---------|----------|
 | error   | 0        |
@@ -384,7 +384,7 @@ We are open for contributions! We’re not yet sure how to go about this so just
 
 
 
-Support Express-Backend by contributing financially as a sponsor. [Sponsor a monthly amout here](https://buy.stripe.com/4gw5nHbMv6jJfNS4gg). Contributions above $50 will land your name and logo at the top of the README file, $10-20 and we’ll put your logo with link below and <$10 we’ll mention your name below.
+Support Express-Backend by contributing financially as a sponsor. [Sponsor a monthly amout here](https://buy.stripe.com/4gw5nHbMv6jJfNS4gg) and we'll add you in this README.
 
 ## Resources
 
