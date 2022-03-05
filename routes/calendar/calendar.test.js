@@ -16,7 +16,6 @@
      request(app)
        .get("/calendar/123")
        .set('x-request-id', `test-${nanoid(6)}`)
-       .expect("Content-Type", /html/)
        .expect(200)
        .end((err, res) => {
          if (err) return done(err);
@@ -28,7 +27,6 @@
     request(app)
       .post("/calendar")
       .set('x-request-id', `test-${nanoid(6)}`)
-      .expect("Content-Type", /html/)
       .expect(500)
       .end((err, res) => {
         if (err) return done(err);
@@ -40,7 +38,6 @@
     request(app)
       .patch("/calendar/123")
       .set('x-request-id', `test-${nanoid(6)}`)
-      .expect("Content-Type", /html/)
       .expect(200)
       .end((err, res) => {
         if (err) return done(err);
@@ -52,7 +49,6 @@
     request(app)
       .delete("/calendar/123")
       .set('x-request-id', `test-${nanoid(6)}`)
-      .expect("Content-Type", /html/)
       .expect(200)
       .end((err, res) => {
         if (err) return done(err);

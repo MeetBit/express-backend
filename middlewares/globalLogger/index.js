@@ -1,6 +1,3 @@
-const express = require('express')
-const router = express.Router()
-
 //utils
 const logger = require('#utils/logger')
 

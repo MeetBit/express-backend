@@ -7,6 +7,15 @@
     "dev": "nodemon ./bin/www",
     "test": "jest"
   },
+  "imports": {
+    "#root/*": "./*",
+    "#controllers/*": "./controllers/*/index.js",
+    "#middlewares/*": "./middlewares/*/index.js",
+    "#public/*": "./public/*/index.js",
+    "#routes/*": "./routes/*/index.js",
+    "#tests/*": "./tests/*/index.js",
+    "#utils/*": "./utils/*/index.js"
+  },
   "nodemonConfig": {
     "ignore": [
       "test/*"
@@ -24,15 +33,6 @@
       "#utils/(.*)": "<rootDir>/utils/$1"
     }
   },
-  "imports": {
-    "#root/*": "./*",
-    "#controllers/*": "./controllers/*/index.js",
-    "#middlewares/*": "./middlewares/*/index.js",
-    "#public/*": "./public/*/index.js",
-    "#routes/*": "./routes/*/index.js",
-    "#tests/*": "./tests/*/index.js",
-    "#utils/*": "./utils/*/index.js"
-  },
   "dependencies": {
     "aws-sdk": "^2.1087.0",
     "axios": "^0.26.0",
@@ -42,8 +42,11 @@
     "debug": "~2.6.9",
     "dotenv": "^16.0.0",
     "express": "~4.16.1",
+    "helmet": "^5.0.2",
+    "http-errors": "^2.0.0",
     "nanoid": "^3.3.1",
     "response-time": "^2.3.2",
+    "statuses": "^2.0.1",
     "winston": "^3.6.0",
     "winston-cloudwatch": "^3.1.1"
   },

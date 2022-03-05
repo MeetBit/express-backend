@@ -7,6 +7,7 @@ const catchAsync = require('#middlewares/catchAsync')
 
 //utils
 const logger = require('#utils/logger')
+const createError = require('http-errors')
 
 exports.getCalendar = catchAsync(async (req, res, next) => {
 	//do some api calls
@@ -20,7 +21,7 @@ exports.createCalendar = catchAsync(async (req, res, next) => {
 	
 	let newCalendar
 
-	if (!newCalendar) throw 500, 'Something went wrong in creating your calendar.'
+	if (!newCalendar) return next(createError(500, 'Something went wrong in creating your calendar.'))
 
 	//logger
 	res.status(201).send('Successfully created calendar')

@@ -9,20 +9,9 @@ const winston = require('winston'),
   WinstonCloudWatch = require('winston-cloudwatch')
 
 const logStreamId = nanoid()
-const env = process.env.ENV.toLowerCase()
+const env = process.env.ENV?.toLowerCase()
 
-if (env == "development" || env == "dev") { //if development env then use console  
-  const devFormat = winston.format.printf((info, opts) => {
-    const item = info
-    return !item.requestId && !item.method && !item.path ? `${new Date().toISOString()} ${item.level}: ${item.message}` : `${new Date().toISOString()} ${item.level}: [${item.requestId}] ${item.method} ${item.path} ${item.message}`
-  })
-
-  winston.add(new winston.transports.Console({
-    json: true,
-    colorize: true,
-    format: winston.format.combine(devFormat)
-  }))
-} else { //if production or staging use staging winston-aws
+if (env == "production" || env == "prod" || env == 'staging' ) { //if production or staging, send logs to cloudwatch
   winston.add(new WinstonCloudWatch({
     logGroupName: process.env.npm_package_name,
     logStreamName: `${process.env.npm_package_name}${env=="staging" ? '-staging' : ''}-${new Date().toISOString().split('T')[0]}-${logStreamId}`,
@@ -30,9 +19,20 @@ if (env == "development" || env == "dev") { //if development env then use consol
     awsSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
     awsRegion: process.env.AWS_REGION,
     messageFormatter: (item) => {
-      return !item.requestId && !item.method && !item.path ? `${item.level}: ${item.message}` : `${item.level}: [${item.requestId}] ${item.method} ${item.path} ${item.message}`
+      return !item.requestId && !item.method && !item.path ? `${item.level}: ${item.message}` : `${item.level}: [${item.requestId}] ${item.method} ${item.path} - ${item.message}`
     }
   }));
+} else { //default development mode, send logs to console.
+  const devFormat = winston.format.printf((info, opts) => {
+    const item = info
+    return !item.requestId && !item.method && !item.path ? `${new Date().toISOString()} ${item.level}: ${item.message}` : `${new Date().toISOString()} ${item.level}: [${item.requestId}] ${item.method} ${item.path} - ${item.message}`
+  })
+
+  winston.add(new winston.transports.Console({
+    json: true,
+    colorize: true,
+    format: winston.format.combine(devFormat)
+  }))
 }
 
 /**
