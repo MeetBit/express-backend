@@ -12,9 +12,11 @@ This boilerplate will you get started with a production-ready expressjs backend 
 
 This uses multiple other packages to work. Their documentation will be linked below.
 
-If something does not work, please file an issue.
+If something does not work, please [file an issue](https://github.com/MeetBit/express-backend/issues/new).
 
-If you need help or have some suggestions, let us know in Discussions.
+If you need help or have some suggestions, [let us know in Discussions](https://github.com/MeetBit/express-backend/discussions/new).
+
+Express-Backend is maintained and developed by [MeetBit Inc.](https://meetbit.io/)
 
 ## Quick Start
 
