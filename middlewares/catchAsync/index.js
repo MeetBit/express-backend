@@ -1,4 +1,4 @@
-const logger = require('@utils/logger')
+const logger = require('#utils/logger')
 
 /**
  * The HTTP request and has properties for the request query string, parameters, body, HTTP headers.
@@ -22,11 +22,13 @@ const logger = require('@utils/logger')
  * @param {Response} res The HTTP response object.
  * @param {Next} next Function that passes control to the next matching route.
  */
-const catchAsync = fn => (req, res, next) => {
-  Promise.resolve(fn(req, res, next)).catch((err) => {
-    logger.error(err, req)
-    next(err)
-  });
-};
+const catchAsync = fn => {
+  return (req, res, next) => {
+    fn(req, res, next).catch(e => {
+      logger.error(e, req)
+      next(e)
+    });
+  }
+}
 
-modules.exports = catchAsync
+module.exports = catchAsync

@@ -1,10 +1,37 @@
 {
   "name": "express-backend",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "test": "jest"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*"
+    ]
+  },
+  "jest": {
+    "runner": "groups",
+    "moduleNameMapper": {
+      "#root/(.*)": "<rootDir>/$1",
+      "#controllers/(.*)": "<rootDir>/controllers/$1",
+      "#middlewares/(.*)": "<rootDir>/middlewares/$1",
+      "#public/(.*)": "<rootDir>/public/$1",
+      "#routes/(.*)": "<rootDir>/routes/$1",
+      "#tests/(.*)": "<rootDir>/tests/$1",
+      "#utils/(.*)": "<rootDir>/utils/$1"
+    }
+  },
+  "imports": {
+    "#root/*": "./*",
+    "#controllers/*": "./controllers/*/index.js",
+    "#middlewares/*": "./middlewares/*/index.js",
+    "#public/*": "./public/*/index.js",
+    "#routes/*": "./routes/*/index.js",
+    "#tests/*": "./tests/*/index.js",
+    "#utils/*": "./utils/*/index.js"
   },
   "dependencies": {
     "aws-sdk": "^2.1087.0",
@@ -15,12 +42,15 @@
     "debug": "~2.6.9",
     "dotenv": "^16.0.0",
     "express": "~4.16.1",
-    "http-errors": "~1.6.3",
+    "nanoid": "^3.3.1",
     "response-time": "^2.3.2",
     "winston": "^3.6.0",
     "winston-cloudwatch": "^3.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "jest": "^27.5.1",
+    "jest-runner-groups": "^2.1.0",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   }
 }
