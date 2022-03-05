@@ -20,7 +20,7 @@ Express-Backend is maintained and developed by [MeetBit Inc.](https://meetbit.io
 
 ## Quick Start
 
----
+
 
 ```bash
 npx @meetbit/express-backend my-server
@@ -38,7 +38,7 @@ You can start creating routes by adding modules in `./routes` and following how 
 
 ## Creating Your Server
 
----
+
 
 You’ll need to have Node 16.0.0 or later version but **we recommend running Node 16.14.0** specifically for your local and production environments. **You must also have Yarn 1.2x.x installed**. It is a personal preference we have at MeetBit to use Yarn but feel free to switch to npm if you prefer. You can follow this [tutorial](https://www.mixmax.com/engineering/to-yarn-and-back-again-npm).
 
@@ -54,7 +54,7 @@ This **creates a folder** with a structure outlined below and **installs require
 
 ## Environment Variables
 
----
+
 
 express-backend does not require any environment variables to get started. But the following can be configured for customization and is required for production.
 | Key                   | Development Value                |
@@ -69,7 +69,7 @@ express-backend does not require any environment variables to get started. But t
 
 ## File Structure
 
----
+
 
 ```
 my-server/
@@ -116,7 +116,7 @@ In case you’re wondering, the example route provided is `calendar` because tha
 
 ## Live-Reloading and Running Your Server
 
----
+
 
 ```bash
 yarn dev
@@ -128,7 +128,7 @@ To learn more on how to configure and customize nodemon, read its documentation.
 
 ## Absolute Imports
 
----
+
 
 ```jsx
 // app.js
@@ -195,7 +195,7 @@ Why `#`? This is because subpath imports use the `#` prefix compared to module-a
 
 ## Pre-Built Middleware
 
----
+
 
 Express-Backend has three pre-built middleware for you, `catchAsync`, `globalLogger` and `newError`.
 
@@ -254,7 +254,7 @@ In addition to the above three middlewares, **express-backend  and configures th
 
 ## Custom Winston Logger with CloudWatch
 
----
+
 
 Express-Backend has **a pre-built custom logger that logs request information along with your message** for easily tracing errors and requests in production. It uses winston and winston-cloudwatch to interface with AWS CloudWatch in production.
 
@@ -322,7 +322,7 @@ Something that might be unfamiliar for most of you is the `requestId` inside the
 
 ## Testing
 
----
+
 
 ```bash
 yarn test
@@ -376,19 +376,19 @@ In connection to the previous section, running tests for a particular group is q
 
 ## Contributing
 
----
+
 
 We are open for contributions! We’re not yet sure how to go about this so just feel free to create a pull request.
 
 ## Sponsors
 
----
+
 
 Support Express-Backend by contributing financially as a sponsor. [Sponsor a monthly amout here](https://buy.stripe.com/4gw5nHbMv6jJfNS4gg). Contributions above $50 will land your name and logo at the top of the README file, $10-20 and we’ll put your logo with link below and <$10 we’ll mention your name below.
 
 ## Resources
 
----
+
 
 This file references documentation from the different dependencies that this project uses. Here are links to the most important ones you will need as you develop your server.
 
@@ -403,7 +403,7 @@ This file references documentation from the different dependencies that this pro
 
 ## License
 
----
+
 
 Express-Backend is open source software by [MeetBit Inc](https://meetbit.io). [licensed as MIT](https://github.com/MeetBit/express-backend/blob/master/LICENSE)
 .
