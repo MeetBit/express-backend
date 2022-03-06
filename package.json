@@ -1,6 +1,6 @@
 {
   "name": "@meetbit/express-backend",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Boilerplate for an ExpressJS backend server complete with live-reloading, logger, default utils & middleware, and a modular file structure.",
   "author": {
     "name": "meetbit",
