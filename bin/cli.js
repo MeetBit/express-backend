@@ -19,12 +19,12 @@ const runDevComand = `yarn dev`
 
 console.log(`Cloning repository and creating ${repoName} project.`)
 const checkedOut = runCommand(gitCheckoutCommand)
-if (!checkedOut) process.exit(code: -1)
+if (!checkedOut) process.exit(-1)
 
 console.log(`Installing dependencies for ${repoName}`)
 const installedDeps = runCommand(installDepsCommand)
-if (!installedDeps) process.exit(code: -1)
+if (!installedDeps) process.exit(-1)
 
 console.log(`Express-Backend server created. Running ${repoName} server now.`)
 const ranDev = runCommand(runDevComand)
-if (!ranDev) process.exit(code: -1)
+if (!ranDev) process.exit(-1)
