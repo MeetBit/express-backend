@@ -26,7 +26,7 @@ Express-Backend is maintained and developed by [MeetBit Inc.](https://meetbit.io
 npx @meetbit/express-backend my-server
 ```
 
-This will create a new project called `my-server`, install required packages and run your server for the first time.
+**Make sure you have Node 16.14.0 and Yarn 1.22.x**. This will create a new project called `my-server`, install required packages and run your server for the first time.
 
 //insert gif here
 
