@@ -29,11 +29,10 @@ npx @meetbit/express-backend my-server
 
 **Make sure you have Node 16.14.0 and Yarn 1.22.x**. This will create a new project called `my-server`, install required packages and run your server for the first time.
 
-//insert gif here
+<img width="997" alt="Screen Shot 2022-03-06 at 11 35 19" src="https://user-images.githubusercontent.com/55445461/156908120-a63423e9-1679-4409-b35d-daf17bf4a891.png">
+
 
 This runs the server in `PORT=3001` to avoid clashes with most frontend frameworks like ReactJS. You can start testing your new server by running a `GET /` request using Insomnia or Postman. Or, you can just type `[http://localhost:3001](http://localhost:3001)` on your browser.
-
-//insert gif
 
 You can start creating routes by adding modules in `./routes` and following how the calendar route is coded.
 
@@ -306,7 +305,7 @@ Using the logger is quite simple and **can be used to completely replace `consol
 
 The above shows **how logs are viewed from the console** in development. As mentioned in newError above, the stack trace is logged when errors occur in development and staging. The first line also illustrates logs that do not come from within a controller.
 
-// insert image
+<img width="1369" alt="Screen Shot 2022-03-06 at 05 49 13" src="https://user-images.githubusercontent.com/55445461/156907859-abc155d2-9c5f-4c9d-8984-38b7d5945818.png">
 
 The above shows **how logs are viewed from CloudWatch** for production. Staging are similar except: (1) they log the stack trace when an error occurs; and (2) the Log Group Name is automatically is suffixed with `-staging` (e.g. express-backend-staging). The logger also handles running your server in clusters and separates each instance on a separate Log Stream.
 
