@@ -1,0 +1,11 @@
+.DS_Store
+.env
+
+node_modules/
+logs/
+.github/
+
+yarn-error.log
+.nyc_output
+coverage
+build/
