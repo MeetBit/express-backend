@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION=${{ secrets.AWS_REGION }}
           EOF
-      - run: node -e "let pkg=require('./package.json'); pkg.name='express-backend-staging'; require('fs').writeFileSync('package.json'
+      - run: node -e "let pkg=require('./package.json'); pkg.name='express-backend-staging'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
       - run: yarn install --frozen-lockfile
       - run: yarn test
 
