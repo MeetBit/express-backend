@@ -1,5 +1,5 @@
 # express-backend 
-[![npm version](https://badge.fury.io/js/@meetbit%2Fexpress-backend.svg)](https://badge.fury.io/js/@meetbit%2Fexpress-backend) [![Test](https://github.com/MeetBit/express-backend/actions/workflows/test-package.yml/badge.svg)](https://github.com/MeetBit/express-backend/actions/workflows/test-package.yml) [![Release](https://github.com/MeetBit/express-backend/actions/workflows/release-package.yaml/badge.svg)](https://github.com/MeetBit/express-backend/actions/workflows/release-package.yaml)
+[![npm version](https://badge.fury.io/js/@meetbit%2Fexpress-backend.svg)](https://badge.fury.io/js/@meetbit%2Fexpress-backend) [![Test](https://github.com/MeetBit/express-backend/actions/workflows/test-package.yml/badge.svg)](https://github.com/MeetBit/express-backend/actions/workflows/test-package.yml) [![Release](https://github.com/MeetBit/express-backend/actions/workflows/release-package.yaml/badge.svg)](https://github.com/MeetBit/express-backend/actions/workflows/release-package.yaml) 
 
 This boilerplate will you get started with a production-ready expressjs backend server complete with the following:
 
