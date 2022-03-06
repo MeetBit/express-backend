@@ -6,12 +6,11 @@ const runCommand = command => {
   try {
     execSync(`${command}`, { stdio: 'inherit' })
   } catch (error) {
-    console.log(`Failed to execute ${command}`, e)
+    console.log(`Failed to execute ${command}`, error)
     return false
   }
   return true
 }
-
 
 const repoName = process.argv[2] ? process.argv[2] : 'my-server'
 const gitCheckoutCommand = `git clone https://github.com/MeetBit/express-backend.git ${repoName}`
