@@ -14,6 +14,7 @@ const runCommand = command => {
 }
 
 const repoName = process.argv[2] ? process.argv[2] : 'my-server'
+
 const gitCheckoutCommand = `git clone https://github.com/MeetBit/express-backend.git ${repoName}`
 const renameCommand = `cd ${repoName} && node -e "let pkg=require('./package.json'); pkg.name='${repoName}'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"`
 const installDepsCommand = `cd ${repoName} && yarn`
