@@ -16,6 +16,8 @@ const runCommand = command => {
 const repoName = process.argv[2] ? process.argv[2] : 'my-server'
 
 const gitCheckoutCommand = `git clone https://github.com/MeetBit/express-backend.git ${repoName}`
+const removeGitCommand = `rm -rf .git`
+const removeGithubActionsCommand = `rm -rf .github`
 const renameCommand = `cd ${repoName} && node -e "let pkg=require('./package.json'); pkg.name='${repoName}'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"`
 const installDepsCommand = `cd ${repoName} && yarn`
 const runDevComand = `cd ${repoName} && yarn dev`
@@ -23,6 +25,13 @@ const runDevComand = `cd ${repoName} && yarn dev`
 console.log(`Cloning repository and creating ${repoName} project.`)
 const checkedOut = runCommand(gitCheckoutCommand)
 if (!checkedOut) process.exit(-1)
+
+console.log(`Removing unnecessary files and folders.`)
+const removedGit = runCommand(removeGitCommand)
+if (!removedGit) = process.exit(-1)
+
+const removedGithubActions = runCommand(removeGithubActionsCommand)
+if (!removedGithubActions) process.exit(-1)
 
 console.log(`Renaming project to ${repoName}`)
 const renamed = runCommand(renameCommand)
