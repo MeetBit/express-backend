@@ -20,7 +20,7 @@ const removeGitCommand = `cd ${repoName} && rm -rf .git`
 const removeGithubActionsCommand = `cd ${repoName} && rm -rf .github`
 const removeBin = `cd ${repoName} && rm -rf bin/cli.js`
 const renameCommand = `cd ${repoName} && node -e "let pkg=require('./package.json'); pkg.name='${repoName}'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"`
-const gitInitCommand = `cd ${repoName} && git init . && git add && git commit`
+const gitInitCommand = `cd ${repoName} && git init .`
 const installDepsCommand = `cd ${repoName} && yarn`
 const runDevCommand = `cd ${repoName} && yarn dev`
 
