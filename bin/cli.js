@@ -31,6 +31,7 @@ if (!checkedOut) process.exit(-1)
 console.log(`Removing unnecessary files and folders...`)
 const removedGit = runCommand(removeGitCommand)
 if (!removedGit) process.exit(-1)
+
 const removedGithubActions = runCommand(removeGithubActionsCommand)
 if (!removedGithubActions) process.exit(-1)
 
