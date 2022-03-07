@@ -22,7 +22,7 @@ const removeBin = `cd ${repoName} && rm -rf bin/cli.js`
 const renameCommand = `cd ${repoName} && node -e "let pkg=require('./package.json'); pkg.name='${repoName}'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"`
 const gitInitCommand = `cd ${repoName} && git init . && git add && git commit`
 const installDepsCommand = `cd ${repoName} && yarn`
-const runDevComand = `cd ${repoName} && yarn dev`
+const runDevCommand = `cd ${repoName} && yarn dev`
 
 console.log(`Cloning repository and creating ${repoName} project...`)
 const checkedOut = runCommand(gitCheckoutCommand)
@@ -40,12 +40,12 @@ if (!renamed) process.exit(-1)
 
 console.log(`Initializing Git...`)
 const initializedGit = runCommand(gitInitCommand)
-console.log(!initializedGit) process.exit(-1)
+if (!initializedGit) process.exit(-1)
 
 console.log(`Installing dependencies for ${repoName}...`)
 const installedDeps = runCommand(installDepsCommand)
 if (!installedDeps) process.exit(-1)
 
 console.log(`Express-Backend server created. Running ${repoName} in PORT 3001.`)
-const ranDev = runCommand(runDevComand)
+const ranDev = runCommand(runDevCommand)
 if (!ranDev) process.exit(-1)
